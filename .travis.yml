@@ -1,7 +1,11 @@
 language: c 
 
-install:
-  - sudo apt-get install mono-devel mono-gmcs
+before_install:
+  - sudo apt-get update --qq > /dev/null
+  - sudo apt-get install --qq mono-devel mono-gmcs > /dev/null
+
+env:
+  - EnableNuGetPackageRestore=true
 
 script:
   - cd src
