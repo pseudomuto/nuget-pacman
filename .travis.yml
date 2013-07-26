@@ -4,10 +4,10 @@ before_install:
   - sudo apt-get update -qq > /dev/null
   - sudo apt-get install -qq mono-devel mono-gmcs > /dev/null
   - mozroots --import --sync
+  - src/.nuget/NuGet.exe update -self
 
 env:
   - EnableNuGetPackageRestore=true
 
 script:
-  - cd src
-  - xbuild NuGet.PacMan.sln
+  - xbuild src/NuGet.PacMan.sln
