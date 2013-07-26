@@ -9,7 +9,5 @@ env:
   - EnableNuGetPackageRestore=true
 
 script:
-  - cd .nuget
-  - NuGet.exe update -self
-  - cd ..\src
+  - cd src
   - xbuild NuGet.PacMan.sln
